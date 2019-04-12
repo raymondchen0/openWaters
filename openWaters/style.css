@@ -1,0 +1,117 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    /* probably should have defined fonts here but it was effecting my logo SVG but was too lazy to fix. Instead I repeat myself 3 times */
+}
+section {
+    position: relative;
+}
+/* Hides the Side Scrollbar but keeps it functional */
+::-webkit-scrollbar { 
+    display: none; 
+}
+/* 12 column grid */
+.grid-12 {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    overflow: hidden;
+}
+/* cliff image layer, above the ocean layer */
+.cliff {
+    grid-row: 5/span 8;
+    grid-column: 1/-1;
+    z-index: 2;
+    background-image: url("/img/rock.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+    min-height: 300px
+}
+/* Main Section, includes ocean background */
+.intro {
+    background-image: url("/img/beautiful-coast-h2o-1001682.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    z-index: -5;
+}
+/* SVG Open Waters Logo Positioning and sizing */
+.open-waters {
+    z-index: 99;
+    cursor: pointer;
+    max-width: 125px;
+    grid-column: 2/2;
+    grid-row: 1;
+}
+/* CTA Text in intro-section*/
+.water-title {
+    font-size: 6em;
+    line-height: 1.1;
+    font-weight: 700;
+    color: rgb(0, 112, 122);
+    background: none;
+    grid-column: 2/span 2;
+    grid-row: 4;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Text: "or is it really" styling */
+.water {
+    z-index: 1;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    grid-row: 5;
+    grid-column: 2/span 2;
+    font-family: 'Montserrat', sans-serif;
+}
+/* start of section a */
+.section-a {
+    /* background-image: url("/img/4k-wallpaper-bubbles-hd-wallpaper-1452701.jpg"); */
+    background-size: cover;
+    background-position: center bottom;
+    background-color: rgb(8, 60, 100);
+}
+.scene2 {
+    color: aliceblue;
+    grid-row: 3;
+    grid-column: 5/span 4;
+    font-size: 1.7em;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fact {
+    margin-top: 3%;
+    text-align: center;
+    grid-row: 4;
+    grid-column: 4/span 6;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+
+.scroll-indicator {
+    /* Scroll indicator not animated yet */
+    max-width: 75px;
+    min-width: 50px;
+    grid-row: 7;
+    grid-column: 2/span 2;
+    z-index: 99
+}
+/* intro section, moved -100vh so that on scroll it is under first section and fades in from under */
+.intro-section {
+    margin-bottom: -100vh !important;
+    overflow: hidden;
+}
